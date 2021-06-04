@@ -10,7 +10,8 @@
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "start": "cross-env NODE_ENV=production node ./src/server/transform.js",
     "dev": "cross-env NODE_ENV=development nodemon ./src/server/server.js",
-    "dev:client": "webpack-dev-server --mode development --config ./build/webpack.client.config.js"
+    "dev:client": "webpack-dev-server --mode development --config ./build/webpack.client.config.js",
+    "debug": "cross-env NODE_ENV=production node --inspect-brk ./node_modules/webpack-cli/bin/cli.js --config ./build/webpack.client.config.js"
   },
   "author": "",
   "license": "ISC",
