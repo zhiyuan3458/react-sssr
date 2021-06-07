@@ -8,7 +8,9 @@
     "build:server": "cross-env NODE_ENV=production webpack --progress --hide-modules --config ./build/webpack.server.config.js",
     "build:client": "cross-env NODE_ENV=production webpack --progress --hide-modules --config ./build/webpack.client.config.js",
     "build": "rimraf dist && npm run build:client && npm run build:server",
-    "start": "cross-env NODE_ENV=production node ./src/server/transform.js",
+    "start": "cross-env NODE_ENV=production node ./src/server/server.js",
+    "pm2:start": "cross-env NODE_ENV=production pm2 start ./src/server/server.js",
+    "pm2:stop": "cross-env NODE_ENV=production pm2 stop ./src/server/server.js",
     "dev": "cross-env NODE_ENV=development nodemon ./src/server/server.js",
     "dev:client": "webpack-dev-server --mode development --config ./build/webpack.client.config.js",
     "debug": "cross-env NODE_ENV=production node --inspect-brk ./node_modules/webpack-cli/bin/cli.js --config ./build/webpack.client.config.js"
