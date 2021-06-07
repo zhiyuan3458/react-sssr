@@ -16,7 +16,6 @@ router.post(`${ USER_PREFIX }/add`, async (ctx, next) => {
    const { name, age } = ctx.request.body;
    if (!name || !age) FRONT_ERR_RES(PARAMS_ERR_MSG);
    const data = await userModel.create({ name, age });
-   console.log(64654, data);
 
    ctx.body = 657758;
 });
