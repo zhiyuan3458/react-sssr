@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
+const config = require('../../../../build/config');
+const env = process.env.NODE_ENV;
 
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
 };
 
-const url = 'mongodb://localhost:27017/reactssr';
+const url = config[env].mongodbURL;
 
 module.exports = function () {
   mongoose.connect(url, options);
